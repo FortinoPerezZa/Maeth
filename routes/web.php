@@ -14,5 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('medical_history.form');
 });
+
+Route::post('medical-history-pdf', [App\Http\Controllers\MedicalHistoryController::class, 'exportPdf'])->name('report.pdf');
